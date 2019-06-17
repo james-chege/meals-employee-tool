@@ -3,6 +3,8 @@ import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom';
 import store from './../../redux/store/store'
 import Routes from './../../routes';
+import './App.scss'; 
+
 
 export class App extends Component{
 
