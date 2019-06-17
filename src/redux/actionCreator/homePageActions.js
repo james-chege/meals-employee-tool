@@ -1,18 +1,14 @@
-import { 
-    RETRACT_SLIDER_MENU,
-    FETCH_ALL_CURRENCIES,
-    FETCH_ALL_CURRENCIES_SUCCESS
+import {
+    FETCH_ALL_EMPLOYEES,
+    FETCH_ALL_EMPLOYEES_SUCCESS
     } from './../constants/actionTypes';
 
-export const retractSlider = () => ({
-type: RETRACT_SLIDER_MENU
+
+export const fetchAllEmployeesAction = () => ({
+type: FETCH_ALL_EMPLOYEES
 });
 
-export const fetchAllCurrenciesAction = () => ({
-type: FETCH_ALL_CURRENCIES
-});
-
-export const fetchAllCurrenciesSuccessAction = (allCurrencies) => ({
-type: FETCH_ALL_CURRENCIES_SUCCESS,
-allCurrencies,
+export const fetchAllEmployeesSuccessAction = (allEmployees) => ({
+type: FETCH_ALL_EMPLOYEES_SUCCESS,
+allEmployees,
 });
