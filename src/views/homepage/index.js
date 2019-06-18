@@ -20,18 +20,20 @@ export class Homepage extends Component{
         ); 
     }
 
-    renderMainSection(){
+    renderMainSection(data){
         return(
-            <MainSection />
+            <MainSection data={ data }/>
         )
     }
 
 render(){
+
     return(
         <div>
         <Fragment>
             {this.renderNavBar()}
-            {this.renderMainSection()}
+            {this.renderMainSection(this.props.allState.allEmployees)}
+            {console.log('________+++++', this.props.allState)}
         </Fragment>
     </div>
     )
@@ -43,7 +45,7 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state) => ({
-    allState: state
+    allState: state.homePage
 })
 
 export default connect(

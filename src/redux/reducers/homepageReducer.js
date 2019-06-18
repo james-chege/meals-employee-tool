@@ -10,7 +10,7 @@ const initialState = {
 const homePage = ( state = initialState, action ) => {
     switch(action.type){
         case FETCH_ALL_EMPLOYEES_SUCCESS:
-            return{ ...state, allEmployees: [action.allEmployees.data], isFetchingFromApi: false }
+            return{ ...state, allEmployees: action.allEmployees.data.data.employees, isFetchingFromApi: false }
 
         default:
             return state;

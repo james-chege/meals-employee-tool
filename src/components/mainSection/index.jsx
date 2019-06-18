@@ -4,14 +4,17 @@ import './mainSection.scss';
 
 export default class MainSection extends Component {
 
-    renderQuerySection = () => (
-        <QuerySection />
+    
+
+    renderQuerySection = (data) => (
+        <QuerySection data={data}/>
     );
 
 render(){
-    return(
+    const data = this.props.data;
+    return (
     <div className='main-section'>
-        {this.renderQuerySection()}
+        {this.renderQuerySection(data)}
     </div>
     );
 }

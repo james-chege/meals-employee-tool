@@ -27,6 +27,7 @@
         align-items: center;
         color: #808B96;
         padding-left: 5px;
+        font-size: 15px;
         overflow: hidden;
     }
     .choice-box-display {
@@ -35,6 +36,7 @@
         border: 1px solid #D4D4D4;
         margin-top: 5px;
         color: #808B96;
+        font-size: 15px;
 
 
         .email-item {
@@ -46,7 +48,7 @@
 
         }
         .email-item:hover {
-            background-color: #D4D4D4;
+            background-color: #eeeeee;
             width: 340px;
 
         }
