@@ -1,59 +1,131 @@
-.query-section {
+.main-section {
     position: relative;
-    height: 600px;
-    width: 400px;
-    background-color: #ffffff;
-    top: 40px;
-    left: 60px;
-    border: 1px solid #eaeaea;
+    width: 100vw;
+    height: 90vh;
+    display: flex;
 
-    .email-input-container {
+    .query-section {
         position: relative;
-        top: 30px;
-        left: 25px;
-    }
-    .input-label {
-        color: #808B96;
-        font-size: 13px;
-        margin-bottom: 5px;
-    }
-    .input-field {
-        display: flex;
-        height: 36px;	
-        width: 340px;	
-        border: 1px solid #D4D4D4;
-        border-radius: 2px;
-        outline: none;
-        align-items: center;
-        color: #808B96;
-        padding-left: 5px;
-        font-size: 15px;
-        overflow: hidden;
-    }
-    .choice-box-display {
-        width: 345px;
-        z-index: 1;
-        border: 1px solid #D4D4D4;
-        margin-top: 5px;
-        color: #808B96;
-        font-size: 15px;
+        height: 600px;
+        width: 400px;
+        background-color: #ffffff;
+        top: 40px;
+        left: 70px;
+        border: 1px solid #eaeaea;
 
-
-        .email-item {
-            width: 100%;
-            height: 30px;
-            padding-top: 2px;
+        .email-input-container {
+            position: relative;
+            top: 30px;
+            left: 25px;
+        }
+        .input-label {
+            color: #808B96;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+        .input-field {
+            display: flex;
+            height: 36px;	
+            width: 340px;	
+            border: 1px solid #D4D4D4;
+            border-radius: 2px;
+            outline: none;
+            align-items: center;
+            color: #808B96;
             padding-left: 5px;
+            font-size: 15px;
+            overflow: hidden;
+            margin-top: 15px;
+        }
+        .choice-box-display {
+            width: 345px;
+            z-index: 1;
+            border: 1px solid #D4D4D4;
+            margin-top: 5px;
+            color: #808B96;
+            font-size: 15px;
+
+
+            .email-item {
+                width: 100%;
+                height: 30px;
+                padding-top: 2px;
+                padding-left: 5px;
+                overflow: hidden;
+
+            }
+            .email-item:hover {
+                background-color: #eeeeee;
+                width: 340px;
+
+            }
+        }
+        .choice-box-hidden {
+            visibility: hidden;
+        }
+    }
+
+    .employee-details {
+        position: relative;
+        height: 600px;
+        width: 850px;
+        top: 40px;
+        left: 150px;
+        background-color: #ffffff;
+        border: 1px solid #D4D4D4;
+
+        .employee-details-container {
+            padding-left: 35px;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .detail-item {
+            width: 33%;
             overflow: hidden;
 
-        }
-        .email-item:hover {
-            background-color: #eeeeee;
-            width: 340px;
+            .detail-item-title {
+                margin-bottom: 10px;
+                color: #808B96;
+                font-size: 15px;
+            }
+
+            .detail-item-value {
+                color: #3359DB;
+            }
 
         }
-    }
-    .choice-box-hidden {
-        visibility: hidden;
+
+        .personal-details {
+            top: 50px;
+
+            .avatar {
+                width: 90px;
+                height: 90px;
+                border-radius: 60px;
+                background-color: #808B96;
+            }
+        }
+
+        .work-details {
+            position: relative;
+            top: 130px;
+        }
+
+        .meals-details {
+            position: relative;
+            top: 250px;
+
+            .detail-item-value {
+                font-size: 18px;
+            }
+            .email-value {
+                font-size: 15px;
+            }
+            .bamboo-value {
+                font-size: 35px;
+            }
+        }
     }
 }

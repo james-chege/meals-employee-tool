@@ -4,14 +4,13 @@ import {
     fetchAllEmployeesAction,
         } from './../../redux/actionCreator/homePageActions';
 import { Navbar } from './../../components/navBar';
-import MainSection from './../../components/mainSection';
+import { QuerySection } from './../../components/querySection';
 
 export class Homepage extends Component{
     componentDidMount(){
         const {  fetchAllEmployeesAction } = this.props;
         fetchAllEmployeesAction();
 
-        console.log('homepage props', this.props);
     }
 
     renderNavBar(){
@@ -20,9 +19,9 @@ export class Homepage extends Component{
         ); 
     }
 
-    renderMainSection(data){
+    renderQuerySection(data){
         return(
-            <MainSection data={ data }/>
+            <QuerySection data={ data }/>
         )
     }
 
@@ -32,7 +31,7 @@ render(){
         <div>
         <Fragment>
             {this.renderNavBar()}
-            {this.renderMainSection(this.props.allState.allEmployees)}
+            {this.renderQuerySection(this.props.allState.allEmployees)}
             {console.log('________+++++', this.props.allState)}
         </Fragment>
     </div>
