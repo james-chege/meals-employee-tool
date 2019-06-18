@@ -1,0 +1,44 @@
+.container {
+    width: 65%;
+    margin: 2.3rem 1rem 2rem 7rem;
+}
+
+.user_details__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border: 0.1rem solid #C9C9C9;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin-left: 5rem;
+    width: 40rem;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+}
+
+.user_details {
+    margin-left: 2rem;
+    justify-content: flex-start;
+    margin-top: 1rem;
+    font-size: 2.4rem;
+    .user_name {
+        color: #5F5454;
+    }
+    .user_email {
+        font-size: 1rem;
+        padding-left: 0.5rem;
+        color: #C9C9C9;
+    }
+    .user_bamboo_id {
+       margin-top: 1rem;
+       font-weight: bold;
+       font-size: 5rem;
+       font-family: 'Roboto';
+       color: #9f9f9f;
+    }
+}
