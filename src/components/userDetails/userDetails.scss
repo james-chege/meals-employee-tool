@@ -4,11 +4,12 @@
 }
 
 .user_details__main {
+    box-shadow: 0 0 9px rgb(112, 108, 108);
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    border: 0.1rem solid #C9C9C9;
-    border-radius: 2rem;
+    border: 1px solid #C9C9C9;
+    border-radius: 1rem;
     padding: 1rem;
     margin-left: 5rem;
     width: 40rem;
