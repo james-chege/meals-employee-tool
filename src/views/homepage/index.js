@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { 
+import {
     fetchAllEmployeesAction,
         } from './../../redux/actionCreator/homePageActions';
 import { Navbar } from './../../components/navBar';
@@ -15,8 +15,8 @@ export class Homepage extends Component{
 
     renderNavBar(){
         return (
-        <Navbar /> 
-        ); 
+        <Navbar />
+        );
     }
 
     renderQuerySection(data){
@@ -32,7 +32,6 @@ render(){
         <Fragment>
             {this.renderNavBar()}
             {this.renderQuerySection(this.props.allState.allEmployees)}
-            {console.log('________+++++', this.props.allState)}
         </Fragment>
     </div>
     )

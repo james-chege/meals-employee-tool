@@ -1,4 +1,4 @@
-import React, {Component} from 'react'; 
+import React, {Component} from 'react';
 import './querySection.scss';
 
 export class QuerySection extends Component {
@@ -9,7 +9,7 @@ export class QuerySection extends Component {
     }
 
     emails = [];
-    visibility; 
+    visibility;
     employees;
 
     // render details of employee with selected email from the dropdown
@@ -37,15 +37,15 @@ export class QuerySection extends Component {
         const { emailFieldContent } = this.state;
         if (this.emails.length === 0 || emailFieldContent === this.emails[0]) {
             this.visibility = 'hidden';
-        } 
+        }
         else {
             this.visibility = 'display';
         }
 
         return(
         <div className={`choice-box-${this.visibility}`}>
-            {this.emails.map( (emailItem) => (
-                <div className='email-item' onClick={this.onClickDropdownChoice}> {emailItem} </div>
+            {this.emails.map( (emailItem, index) => (
+                <div className='email-item' key={index} onClick={this.onClickDropdownChoice}> {emailItem} </div>
             ) )}
         </div>
         )
