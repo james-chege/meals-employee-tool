@@ -1,8 +1,10 @@
-import { combineReducers } from 'redux';
-import homePage from './homepageReducer';
+import {combineReducers} from 'redux';
+import employee from './employeeReducer';
+import auth from './authReducer';
 
 const rootReducer = combineReducers({
-    homePage,
+  auth,
+  employee,
 });
 
 export default rootReducer;

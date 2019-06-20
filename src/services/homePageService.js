@@ -1,24 +1,18 @@
 import axios from 'axios';
-import baseUrl from './index';
-import dotenv from 'dotenv';
+import getBaseUrl from './index';
+import store from '../redux/store/store';
 
-dotenv.config();
-
-
-export default class homePageService{
-    API_KEY = process.env.API_KEY;
-    static async getAllEmployees(){
-        const url = `${baseUrl()}/employees`;
-        const response = axios(
-            {
-                method: 'get',
-                url,
-                headers: {
-                    SECURE_PASS: process.env.REACT_APP_SECURE_PASS
-                }
-            }
-        );
-        return response;
-
-    }
-} 
+export default class homePageService {
+  static async getAllEmployees() {
+    const url = `${getBaseUrl()}/employees`;
+    return axios(
+      {
+        method: 'get',
+        url,
+        headers: {
+          SECURE_PASS: store.getState().auth.password
+        }
+      }
+    );
+  }
+}

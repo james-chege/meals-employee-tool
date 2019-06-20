@@ -1,17 +1,15 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import ConnectedHomepage  from './../views/homepage';
+import Homepage  from './../views/homepage';
 
 const Routes = () => (
     <Switch>
         <Route
         path='/'
-        exact 
-        component= { ConnectedHomepage }
+        exact
+        component= { Homepage }
         />
     </Switch>
 );
-
-
 
 export default Routes;

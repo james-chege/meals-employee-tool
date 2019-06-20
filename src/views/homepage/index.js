@@ -1,52 +1,31 @@
-import React, { Component, Fragment } from 'react';
-import { connect } from 'react-redux';
-import {
-    fetchAllEmployeesAction,
-        } from './../../redux/actionCreator/homePageActions';
-import { Navbar } from './../../components/navBar';
-import { QuerySection } from './../../components/querySection';
+import React, {Component, Fragment} from 'react';
+import {Navbar} from './../../components/navBar';
+import ConnectedQuerySection from './../../components/querySection';
 
-export class Homepage extends Component{
-    componentDidMount(){
-        const {  fetchAllEmployeesAction } = this.props;
-        fetchAllEmployeesAction();
+export class Homepage extends Component {
+  renderNavBar() {
+    return (
+      <Navbar/>
+    );
+  }
 
-    }
-
-    renderNavBar(){
-        return (
-        <Navbar />
-        );
-    }
-
-    renderQuerySection(data){
-        return(
-            <QuerySection data={ data }/>
-        )
-    }
-
-render(){
-
-    return(
-        <div>
-        <Fragment>
-            {this.renderNavBar()}
-            {this.renderQuerySection(this.props.allState.allEmployees)}
-        </Fragment>
-    </div>
+  renderQuerySection(data) {
+    return (
+      <ConnectedQuerySection/>
     )
-}
+  }
+
+  render() {
+
+    return (
+      <div>
+        <Fragment>
+          {this.renderNavBar()}
+          {this.renderQuerySection()}
+        </Fragment>
+      </div>
+    )
+  }
 }
 
-const mapDispatchToProps = {
-    fetchAllEmployeesAction,
-}
-
-const mapStateToProps = (state) => ({
-    allState: state.homePage
-})
-
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(Homepage)
+export default Homepage;
