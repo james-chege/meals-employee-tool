@@ -26,10 +26,12 @@ export class QuerySection extends Component {
   employees;
 
   // render details of employee with selected email from the dropdown
-  searchSelectedEmployee = (emailSelected) => {
-    const employeeDetails = this.props.employees.find(({workEmail}) =>
-      (workEmail === emailSelected)
-    );
+  searchSelectedEmployee = (selected) => {
+    const employeeDetails = this.props.employees.find(({workEmail, bambooId}) => {
+      const details = selected.split(' : ');
+
+      return workEmail === details[0] || bambooId === details[1];
+    });
     this.setState(() => ({selectedEmployee: employeeDetails}));
     return (
       <></>
@@ -112,10 +114,13 @@ export class QuerySection extends Component {
           const value = employee[param];
 
           if (searchVal && value && value.toLowerCase().includes(searchVal)) {
-            const {workEmail} = employee;
+            let {bambooId, workEmail} = employee;
+
+            bambooId = bambooId || '<missing>';
+            workEmail = workEmail || '<missing>';
 
             if (matchingEmployees.indexOf(workEmail) < 0)
-              matchingEmployees.push(workEmail);
+              matchingEmployees.push(`${workEmail} : ${bambooId}`);
           }
         });
       }
@@ -176,6 +181,12 @@ export class QuerySection extends Component {
   }
 
   renderPersonalDetails(selectEmployee) {
+    const {
+      firstName,
+      lastName,
+      type,
+    } = selectEmployee;
+
     return (
       <div className='employee-details-container personal-details'>
 
@@ -189,8 +200,9 @@ export class QuerySection extends Component {
             Name
           </div>
           <div className="employee-name detail-item-value">
-            <div style={{display: 'inline-block', margin: 2}}>{selectEmployee.firstName}</div>
-            <div style={{display: 'inline-block', margin: 2}}>{selectEmployee.lastName}</div>
+            {!firstName && !lastName ? '<missing>': ''}
+            <div style={{display: 'inline-block', margin: 2}}>{firstName}</div>
+            <div style={{display: 'inline-block', margin: 2}}>{lastName}</div>
           </div>
         </div>
 
@@ -199,51 +211,62 @@ export class QuerySection extends Component {
             User type
           </div>
           <div className="type detail-item-value">
-            {selectEmployee.type}
+            {type || '<missing>'}
           </div>
         </div>
-
       </div>
     )
   }
 
   renderWorkDetails(selectEmployee) {
+    const {
+      department,
+      division,
+      jobTitle,
+    } = selectEmployee;
+
     return (
       <div className="employee-details-container work-details">
         <div className="detail-item">
           <div className="detail-item-title">
             Department
           </div>
-          <div className="department detail-item-value">{selectEmployee.department}</div>
+          <div className="department detail-item-value">{department || '<missing>'}</div>
         </div>
         <div className="detail-item">
           <div className="detail-item-title">Division</div>
-          <div className="division detail-item-value">{selectEmployee.division}</div>
+          <div className="division detail-item-value">{division || '<missing>'}</div>
         </div>
         <div className="detail-item">
           <div className="detail-item-title">Job Title</div>
-          <div className="job-title detail-item-value">{selectEmployee.jobTitle}</div>
+          <div className="job-title detail-item-value">{jobTitle || '<missing>'}</div>
         </div>
       </div>
     )
   }
 
   renderMealsDetails(selectEmployee) {
+    const {
+      workEmail,
+      bambooId,
+      hasCard,
+    } = selectEmployee;
+
     return (
       <div className="employee-details-container meals-details">
         <div className="detail-item">
           <div className="detail-item-title">
             Email
           </div>
-          <div className="department detail-item-value email-value">{selectEmployee.workEmail}</div>
+          <div className="department detail-item-value email-value">{workEmail || '<missing>'}</div>
         </div>
         <div className="detail-item">
           <div className="detail-item-title ">Bamboo Id</div>
-          <div className="division detail-item-value bamboo-value">{selectEmployee.bambooId}</div>
+          <div className="division detail-item-value bamboo-value">{bambooId || '<missing>'}</div>
         </div>
         <div className="detail-item">
           <div className="detail-item-title">Issued Card</div>
-          <div className="job-title detail-item-value">{`${selectEmployee.hasCard}`}</div>
+          <div className="job-title detail-item-value">{`${hasCard }`}</div>
         </div>
       </div>
     )
