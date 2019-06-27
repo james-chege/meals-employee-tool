@@ -87,6 +87,12 @@ export class QuerySection extends Component {
     this.setState({...this.state, [e.target.name]: e.target.value});
   };
 
+  onKeyPress = (e) => {
+    if (e.keyCode === 13) {
+      this.onSync(e);
+    }
+  }
+
   onPasswordChange = (event) => {
     const {updatePasswordAction} = this.props;
 
@@ -160,6 +166,7 @@ export class QuerySection extends Component {
             type={'password'}
             placeholder={'Password'}
             onChange={this.onPasswordChange}
+            onKeyDown={this.onKeyPress}
           />
           <button
             ref={this.syncBtnRef}
