@@ -119,8 +119,10 @@ export class QuerySection extends Component {
             bambooId = bambooId || '<missing>';
             workEmail = workEmail || '<missing>';
 
-            if (matchingEmployees.indexOf(workEmail) < 0)
-              matchingEmployees.push(`${workEmail} : ${bambooId}`);
+            const item = `${workEmail} : ${bambooId}`;
+
+            if (matchingEmployees.indexOf(item) < 0)
+              matchingEmployees.push(item);
           }
         });
       }
@@ -200,7 +202,7 @@ export class QuerySection extends Component {
             Name
           </div>
           <div className="employee-name detail-item-value">
-            {!firstName && !lastName ? '<missing>': ''}
+            {!firstName && !lastName ? '<missing>' : ''}
             <div style={{display: 'inline-block', margin: 2}}>{firstName}</div>
             <div style={{display: 'inline-block', margin: 2}}>{lastName}</div>
           </div>
@@ -266,7 +268,7 @@ export class QuerySection extends Component {
         </div>
         <div className="detail-item">
           <div className="detail-item-title">Issued Card</div>
-          <div className="job-title detail-item-value">{`${hasCard }`}</div>
+          <div className="job-title detail-item-value">{`${hasCard}`}</div>
         </div>
       </div>
     )
