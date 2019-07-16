@@ -105,6 +105,14 @@
     .personal-details {
       top: 50px;
 
+      .profile_photo {
+        width: 90px;
+        min-height: 90%;
+        border-radius: 60px;
+      img {
+        border-radius: 50%;
+      }
+      }
       .avatar {
         width: 90px;
         height: 90px;

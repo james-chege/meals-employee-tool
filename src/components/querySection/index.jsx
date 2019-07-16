@@ -194,13 +194,15 @@ export class QuerySection extends Component {
       firstName,
       lastName,
       type,
+      photoUrl
     } = selectEmployee;
 
     return (
       <div className='employee-details-container personal-details'>
 
         <div className="detail-item">
-          <div className="avatar">
+          <div className={photoUrl ? "profile_photo" : "avatar"}>
+            <img src={photoUrl} alt=""/>
           </div>
         </div>
 
